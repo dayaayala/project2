@@ -1,0 +1,84 @@
+/* Start screen — matches Figma frame 357.549×640, cream bg, gradient ellipse + button */
+
+.start {
+  position: relative;
+  width: 100%;
+  max-width: 357.549px;
+  height: 640px;
+  margin: 0 auto;
+  background: #fefaf3;
+  overflow: hidden;
+}
+
+.start__bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #fefaf3;
+}
+
+.start__ellipse-wrap {
+  position: absolute;
+  left: 95px;
+  top: 248px;
+  width: 168px;
+  height: 84px;
+}
+
+.start__ellipse {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 9999px;
+  border-top-right-radius: 9999px;
+  background: linear-gradient(to bottom, #ff4e4e 0%, #ff8158 50%, #ffb700 100%);
+  background-size: 200% 200%;
+  animation: start-gradient-shift 14s ease-in-out infinite alternate;
+}
+
+@keyframes start-gradient-shift {
+  0% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 50% 0%;
+  }
+}
+
+.start__btn {
+  position: absolute;
+  left: 95px;
+  top: 348px;
+  width: 168px;
+  min-height: 44px;
+  padding: 10px 0;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(to right, #ff70d4, #ffb700);
+  background-size: 200% 200%;
+  animation: start-gradient-shift 16s ease-in-out infinite alternate;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.start__btn:hover {
+  filter: brightness(1.05);
+}
+
+.start__btn:active {
+  transform: scale(0.98);
+}

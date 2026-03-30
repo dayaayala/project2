@@ -1,12 +1,13 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// Must match the repo name for GitHub Pages: https://<user>.github.io/<repo>/
+// Vercel serves the app at the site root. GitHub Pages uses /<repo-name>/.
+const base = process.env.VERCEL ? '/' : '/projecttwo/'
+
 export default defineConfig({
   plugins: [react()],
-  base: '/projecttwo/',
+  base,
   server: {
-    // With a non-root base, open the app URL so the favicon + assets resolve.
-    open: '/projecttwo/',
+    open: base,
   },
 })
